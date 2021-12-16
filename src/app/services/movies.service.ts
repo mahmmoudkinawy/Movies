@@ -12,10 +12,10 @@ export class MoviesService {
 
   constructor(private http: HttpClient) {}
 
-  getMovies(type: string = 'upcoming') {
+  getMovies(type: string = 'upcoming', count: number = 12) {
     return this.http.get<MovieDto>(`${this.baseUrl}/movie/${type}?api_key=${this.apiKey}`).pipe(
       switchMap((res) => {
-        return of(res.results);
+        return of(res.results.slice(0, count));
       })
     );
   }

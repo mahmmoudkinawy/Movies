@@ -9,6 +9,7 @@ import { MoviesComponent } from './pages/movies/movies.component';
 const routes: Routes = [
   { path: '', component: HomeComponent }, //'' the root component and that is home
   { path: 'movies', component: MoviesComponent },
+  { path: 'movies/genres/:genreId', component: MoviesComponent },
   { path: 'movie/:id', component: MovieComponent },
   { path: 'genres', component: GenresComponent },
   { path: '**', redirectTo: '' }

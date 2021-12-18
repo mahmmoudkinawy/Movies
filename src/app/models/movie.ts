@@ -46,3 +46,10 @@ export interface MovieImages {
     file_path: string;
   }[]; //This is mean, Array of backdrops
 }
+
+export interface MovieCredits {
+  cast: {
+    name: string;
+    profile_path: string;
+  }[];
+}

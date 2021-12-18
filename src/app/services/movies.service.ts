@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Movie, MovieCredits, MovieDto, MovieImages, MovieVideoDto } from '../models/movie';
 import { of, switchMap } from 'rxjs';
+import { GenersDto } from '../models/genre';
 
 @Injectable({
   providedIn: 'root'
@@ -32,6 +33,14 @@ export class MoviesService {
           return of(res.results);
         })
       );
+  }
+
+  getMoviesGenres() {
+    return this.http.get<GenersDto>(`${this.baseUrl}/genre/movie/list?api_key=${this.apiKey}`).pipe(
+      switchMap((res) => {
+        return of(res.genres);
+      })
+    );
   }
 
   getMovieImages(id: string) {

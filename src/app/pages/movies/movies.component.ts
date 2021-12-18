@@ -12,10 +12,12 @@ import { MoviesService } from '../../services/movies.service';
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
   genreId: string | null = null;
+  searchValue: string | null = null;
 
   constructor(private moviesService: MoviesService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
+    this.searchValue = 'Hello';
     this.route.params.pipe(take(1)).subscribe(({ genreId }) => {
       if (genreId) {
         this.genreId = genreId;
@@ -44,5 +46,9 @@ export class MoviesComponent implements OnInit {
       this.getMoviesByGenre(this.genreId, pageNumber);
     }
     this.getPagedMovies(pageNumber);
+  }
+
+  searchChanged() {
+    console.log(this.searchValue);
   }
 }

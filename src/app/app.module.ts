@@ -13,10 +13,11 @@ import { SliderComponent } from './components/slider/slider.component';
 import { ItemsBannerComponent } from './components/items-banner/items-banner.component';
 import { ItemComponent } from './components/item/item.component';
 import { MovieComponent } from './pages/movie/movie.component';
+import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
 
 import { PaginatorModule } from 'primeng/paginator';
 import { TabViewModule } from 'primeng/tabview';
-import { VideoEmbedComponent } from './components/video-embed/video-embed.component';
+import { ImageModule } from 'primeng/image';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { VideoEmbedComponent } from './components/video-embed/video-embed.compon
     BrowserAnimationsModule,
     HttpClientModule,
     PaginatorModule,
-    TabViewModule
+    TabViewModule,
+    ImageModule
   ],
   providers: [],
   bootstrap: [AppComponent]

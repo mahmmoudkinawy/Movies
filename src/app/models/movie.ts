@@ -40,3 +40,9 @@ export interface MovieVideo {
   site: string;
   key: string;
 }
+
+export interface MovieImages {
+  backdrops: {
+    file_path: string;
+  }[]; //This is mean, Array of backdrops
+}
